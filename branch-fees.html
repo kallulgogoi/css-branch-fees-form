@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS NIT Silchar Payment Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background: linear-gradient(135deg, #000428, #004e92);
+        min-height: 100vh;
+        font-family: "Orbitron", sans-serif;
+        overflow: hidden;
+      }
+      .glow {
+        box-shadow: 0 0 30px rgba(0, 191, 255, 0.7);
+      }
+      .tech-border {
+        border: 2px solid #00bfff;
+        border-radius: 12px;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+      }
+      .input-glow:focus {
+        box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+      }
+      .particle {
+        position: absolute;
+        background: rgba(0, 191, 255, 0.2);
+        border-radius: 50%;
+        pointer-events: none;
+        animation: float 15s infinite linear;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(0) translateX(0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) translateX(100px);
+          opacity: 0;
+        }
+      }
+      @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+    </style>
+    <script>
+      // Simple JS for background particles
+      document.addEventListener("DOMContentLoaded", () => {
+        const body = document.body;
+        for (let i = 0; i < 50; i++) {
+          const particle = document.createElement("div");
+          particle.classList.add("particle");
+          particle.style.width = `${Math.random() * 5 + 2}px`;
+          particle.style.height = particle.style.width;
+          particle.style.left = `${Math.random() * 100}%`;
+          particle.style.top = `${Math.random() * 100}%`;
+          particle.style.animationDelay = `${Math.random() * 15}s`;
+          particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+          body.appendChild(particle);
+        }
+      });
+    </script>
+  </head>
+  <body class="flex items-center justify-center p-4 relative overflow-hidden">
+    <div class="w-full max-w-md tech-border glow p-8 relative z-10">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl font-bold text-cyan-300 mb-2 tracking-wider">
+          CSS NIT Silchar
+        </h1>
+        <p class="text-cyan-200 text-sm font-light">
+          Computer Science Society - Branch Fees Payment
+        </p>
+        <div class="mt-6 mx-auto w-24 h-1 bg-cyan-500 rounded-full glow"></div>
+      </div>
+
+      <form class="space-y-6">
+        <div>
+          <label for="name" class="block text-sm font-medium text-cyan-100 mb-2"
+            >Full Name</label
+          >
+          <input
+            type="text"
+            id="name"
+            class="w-full px-4 py-3 bg-gray-900 bg-opacity-50 border border-cyan-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 input-glow transition-all duration-300 placeholder-gray-500"
+            placeholder="Enter your full name"
+            required
+          />
+        </div>
+
+        <div>
+          <label
+            for="scholarId"
+            class="block text-sm font-medium text-cyan-100 mb-2"
+            >Scholar ID</label
+          >
+          <input
+            type="text"
+            id="scholarId"
+            class="w-full px-4 py-3 bg-gray-900 bg-opacity-50 border border-cyan-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 input-glow transition-all duration-300 placeholder-gray-500"
+            placeholder="e.g., 2412109"
+            required
+          />
+        </div>
+
+        <div>
+          <label
+            for="email"
+            class="block text-sm font-medium text-cyan-100 mb-2"
+            >Institute Email ID</label
+          >
+          <input
+            type="email"
+            id="email"
+            class="w-full px-4 py-3 bg-gray-900 bg-opacity-50 border border-cyan-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 input-glow transition-all duration-300 placeholder-gray-500"
+            placeholder="name_ug_25@cse.nits.ac.in"
+            required
+          />
+        </div>
+
+        <div class="pt-6">
+          <button
+            type="submit"
+            class="w-full py-4 px-6 bg-cyan-700 hover:bg-cyan-600 text-white font-bold text-lg rounded-md transition-all duration-300 transform hover:scale-105 glow flex items-center justify-center space-x-2"
+          >
+            <span>Pay Now</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </button>
+        </div>
+      </form>
+
+      <div class="mt-8 text-center text-xs text-cyan-300 opacity-70">
+        <p>Encrypted & Secure | Powered by CSS Dev wing</p>
+        <p class="mt-1">NIT Silchar Computer Science Society © 2025</p>
+      </div>
+    </div>
+  </body>
+</html>
